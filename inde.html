@@ -3,23 +3,45 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="/bs/bootstrap.min.css">
 	<link rel="stylesheet" href="/style.css">
 	<title>Labirint</title>
 </head>
 <body>
-	<div class="game-area">
-		<div class="border-top border red"></div>
-		<div class="border-right border red"></div>
-		<div class="border-bottom border red"></div>
-		<div class="border-left border red"></div>
-		<div class="start green"></div>
-		<div class="end orange"></div>
-
-		<div class="block-1 border red"></div>
-		<div class="block-2 border  red"></div>
-		<div class="block-3 border  red"></div>
-		<div class="block-4 border  red"></div>
+	<div class="wraper">
+		<div class="game-area">
+			<div class="border-top border red"></div>
+			<div class="border-right border red"></div>
+			<div class="border-bottom border red"></div>
+			<div class="border-left border red"></div>
+			<div class="start green"></div>
+			<div class="end orange"></div>
+	
+			<div class="block-1 border red"></div>
+			<div class="block-2 border  red"></div>
+			<div class="block-3 border  red"></div>
+			<div class="block-4 border  red"></div>
+		</div>
 	</div>
+	<button type="button" class="bt btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Settings</button>
+	<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<!-- <audio id="fail-sound"  controls src="fail-sound.mp3"></audio> -->
+					<p>Switch theme</p>
+					<div class="switcher"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	
+	<script src="/bs/bootstrap.min.js"></script>
 	<script src="/script.js"></script>
 </body>
 </html>

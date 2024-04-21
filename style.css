@@ -1,18 +1,30 @@
 body{
 	margin: 0;
-	background-color: var(--bg-color);
+	background-color: var(--bg-color-light);
+	transition: background-color 1s ease;
 }
 :root{
 	--size: 600px;
-	--bg-color: #fbdbff;
+	--bg-color-light: #fbdbff;
+	--bg-color-darck: #68466c;
+	--bg-color-darck-switcher: #f1c1f6;
+	--bg-color-darck-modal: #bc8fc1;
 }
 .game-area{
 	width: var(--size);
 	height: var(--size);
-	margin: auto;
 	display: grid;
 	grid-template-columns: repeat(100, calc(var(--size)/100));
 	grid-template-rows: repeat(100, calc(var(--size)/100));
+}
+.wraper{
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.bt{
+	position: fixed; top: 20px; right: 20px;
 }
 /* main borders */
 .border-top{
@@ -32,6 +44,10 @@ body{
 	grid-column: 1/101;
 }
 
+.border{
+	border: none !important;
+}
+
 /* colors */
 
 .red{
@@ -44,9 +60,15 @@ body{
 	background: orange;
 }
 .blue{
+	transition: background-color 2s linear;
 	background-color: blue;
 }
-
+.darck-theme{
+	background-color: var(--bg-color-darck);
+}
+.darck-theme-modal-window{
+	background-color: var(--bg-color-darck-modal);
+}
 
 /*  */
 .block-1{
@@ -68,11 +90,46 @@ body{
 .start{
 	grid-column: 5/15;
 	grid-row: 85/95;
-	transition: background-color 3s linear;
 }
 
 
 .end{
 	grid-column: 65/80;
 	grid-row: 85/100;
+}
+
+/* settings */
+
+.switcher{
+	width: 100px;
+	height: 40px;
+	border-radius: 50vw;
+	background-color: #eee;
+	position: relative;
+}
+.switcher::before{
+	content: '';
+	position: absolute;
+	width: 30px;
+	top: 5px;
+	left: 5px;
+	transform: translateX(0);
+	border-radius: 50%;
+	aspect-ratio: 1/1;
+	background-color: var(--bg-color-light);
+	transition: left .5s ease-in, background-color .6s ease;
+}
+.active::before {
+	left: 65px;
+	background-color: var(--bg-color-darck);
+}
+.modal-header{
+	transition: background-color .5s ease, border-bottom 1.3s ease;
+}
+.darck-header{
+	border-bottom: 1px solid var(--bg-color-darck) ;
+}
+.active{
+	transition: background-color .5s ease;
+	background-color: var(--bg-color-darck-switcher);
 }

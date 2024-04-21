@@ -19,7 +19,8 @@ let timerStart = (time) => {
 				for (const i of borders) {
 					i.addEventListener('mouseenter', ()=>{
 						if(!game.finished && game.start){
-							game.start ? alert('u failed') :false
+							// document.querySelector('#fail-sound').setAttribute('autoplay', '')
+							
 							resetGame()
 					}
 					})
@@ -47,4 +48,10 @@ start.addEventListener("mouseleave", ()=>{
 end.addEventListener('mouseenter', ()=>{
 	game.finished = true
 	resetGame()
+})
+document.querySelector('.switcher').addEventListener('click', (e)=>{
+	e.target.classList.toggle('active')
+	document.body.classList.toggle('darck-theme')
+	document.querySelector('.modal-content').classList.toggle('darck-theme-modal-window')
+	document.querySelector('.modal-header').classList.toggle('darck-header')
 })
